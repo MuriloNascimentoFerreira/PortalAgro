@@ -1,6 +1,8 @@
 <?php
 include("Conexao.php");
 
+// não cadastrar emails iguais (adicionar essa funcionalida)
+
 class ControllerCadastro extends Conexao{
 
     private $nome;
@@ -9,7 +11,6 @@ class ControllerCadastro extends Conexao{
     private $senha;
     private $confSenha;
     private $resultado;
-
     private $conexao;
 
     public function __construct(){
