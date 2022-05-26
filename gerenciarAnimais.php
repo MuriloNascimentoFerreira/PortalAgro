@@ -3,6 +3,7 @@ include "conexao.inc";
 
 $email = $_POST['email'];
 $senha = $_POST['senha'];
+
 $sql = "select email,senha from usuario where email='".$email."' and senha='".$senha."'";
 $resultado = mysqli_query($conexao, $sql);
 mysqli_close($conexao);

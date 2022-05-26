@@ -15,10 +15,10 @@
     <h2>Cadastro</h2>
 
     <div class="container-fluid">
-        <form id="form-cadastro" action="realiza_cadastro.php" method="post">
+        <form id="form-cadastro" action="ControllerCadastro.php" method="post">
             <div class="form-group col-md-10">
                 <label for="inputEmail4">Nome</label>
-                <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome">
+                <input required type="text" class="form-control" placeholder="Nome" name="nome" id="nome">
             </div>
             <div class="form-group col-md-10">
                 <label for="inputEmail4">Sobrenome</label>
@@ -30,11 +30,11 @@
             </div>
             <div class="form-group col-md-10">
                 <label for="inputPassword4">Senha</label>
-                <input required type="password" class="form-control" id="inputPassword4" placeholder="Senha" name="senha">
+                <input required type="password" class="form-control" id="senha" placeholder="Senha" name="senha">
             </div>
             <div class="form-group col-md-10">
                 <label for="inputPassword5">Repetir Senha</label>
-                <input required type="password" class="form-control" id="inputPassword5" placeholder="Repita sua Senha" name="senhaRepetida">
+                <input required type="password" class="form-control" id="confSenha" placeholder="Repita sua Senha" name="confSenha">
             </div>
 
             <button type="submit" class="btn btn-primary ml-3 mt-3  col-md-10">Finalizar Cadastro</button>
