@@ -3,10 +3,33 @@
 body{
     padding-top: 20px;
     max-width: 900px;
+    min-width: 500px;
     margin: auto;
-  }
+}
 
-  h2{
+h1{
     text-align: center;
     padding-bottom: 20px;
-  } 
+} 
+
+h2{
+    text-align: center;
+    padding-bottom: 20px;
+} 
+
+main{
+
+    padding: 10px;
+}
+
+table{
+    margin-top: 20px;
+}
+
+th{
+    text-align: center;
+}
+
+td.numero{
+    text-align: center;
+}

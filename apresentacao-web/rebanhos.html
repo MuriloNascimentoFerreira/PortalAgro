@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     
@@ -13,12 +17,97 @@
     <title>Gerenciar Rebanhos</title>
 </head>
 <body>
+
+    <header>
+        <h1>Gerenciar rebanhos</h1>
+        
+    </header>
+    
+    <main>
+        <form action="#" class="row gy-2 gx-3 align-items-center">
+            <div class="col-sm-6">
+                <label class="form-label" for="form-label">Título</label>
+                <input required type="text" class="form-control" id="titulo" placeholder="Ex: Gado do pasto alugado">
+            </div>
+            
+            <div class="col-md-3">
+                <label class="form-label" for="autoSinizingSelect">Tipo</label>
+                <select class="form-select" id="select">
+                    <option selected>Bovino</option>
+                    <option value="1">Assinino</option>
+                    <option value="2">Bufalino</option>
+                    <option value="3">Caprino</option>
+                    <option value="4">Equino</option>
+                    <option value="5">Muar</option>
+                    <option value="6">Ovino</option>
+                    <option value="7">Suíno</option>
+                  </select>
+            </div>
+
+            <div class="col-auto align-self-end">
+                <button type="submit" class="btn btn-primary px-4">Adicionar</button>
+            </div>
+             
+        </form>
+
+        <div class="container">
+            <table class="table table-">
+                <thead>
+                    <tr>
+                        <th scope="row">#</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Total de animais</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>Gado</td>
+                        <td>Bovino</td>
+                        <td class="numero">132</td>
+                        <td><a href="#" class="btn btn-primary">Acessar</a></td>
+                        <td><a href="#" class="btn btn-danger">Excluir</a></td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>Meus porcos</td>
+                        <td>Suíno</td>
+                        <td class="numero">15</td>
+                        <td><a href="#" class="btn btn-primary">Acessar</a></td>
+                        <td><a href="#" class="btn btn-danger">Excluir</a></td>
+                    </tr>
+                </tbody>
+            </table>
+    
+        </div>
+        
+    </main>
     
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <footer>
+
+    </footer>
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et, sint deleniti nostrum omnis delectus expedita porro reprehenderit odio perspiciatis necessitatibus repudiandae beatae distinctio architecto, animi neque maiores nulla eveniet?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et, sint deleniti nostrum omnis delectus expedita porro reprehenderit odio perspiciatis necessitatibus repudiandae beatae distinctio architecto, animi neque maiores nulla eveniet?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et, sint deleniti nostrum omnis delectus expedita porro reprehenderit odio perspiciatis necessitatibus repudiandae beatae distinctio architecto, animi neque maiores nulla eveniet?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et, sint deleniti nostrum omnis delectus expedita porro reprehenderit odio perspiciatis necessitatibus repudiandae beatae distinctio architecto, animi neque maiores nulla eveniet?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et, sint deleniti nostrum omnis delectus expedita porro reprehenderit odio perspiciatis necessitatibus repudiandae beatae distinctio architecto, animi neque maiores nulla eveniet?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et, sint deleniti nostrum omnis delectus expedita porro reprehenderit odio perspiciatis necessitatibus repudiandae beatae distinctio architecto, animi neque maiores nulla eveniet?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et, sint deleniti nostrum omnis delectus expedita porro reprehenderit odio perspiciatis necessitatibus repudiandae beatae distinctio architecto, animi neque maiores nulla eveniet?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et, sint deleniti nostrum omnis delectus expedita porro reprehenderit odio perspiciatis necessitatibus repudiandae beatae distinctio architecto, animi neque maiores nulla eveniet?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et, sint deleniti nostrum omnis delectus expedita porro reprehenderit odio perspiciatis necessitatibus repudiandae beatae distinctio architecto, animi neque maiores nulla eveniet?</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et, sint deleniti nostrum omnis delectus expedita porro reprehenderit odio perspiciatis necessitatibus repudiandae beatae distinctio architecto, animi neque maiores nulla eveniet?</p>
+    <var>  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et, sint deleniti nostrum omnis delectus expedita porro reprehenderit odio perspiciatis necessitatibus repudiandae beatae distinctio architecto, animi neque maiores nulla eveniet?</p>
+-->
+
 
     <script  type="text/javascript" src="js/javascript.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>
