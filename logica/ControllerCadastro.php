@@ -59,7 +59,6 @@ class ControllerCadastro extends Conexao{
         $this->conexao->bindValue("5", $this->senha);
         
         $this->resultado = $this->conexao->execute();
-        echo $this->resultado;
 
         if($this->resultado == 1){
             echo '<script>
