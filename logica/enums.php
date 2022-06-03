@@ -29,6 +29,13 @@ class TipoRebanho
 class TipoSituacao{
     const VIVO = 'Vivo';
     const ABATIDO = 'Abatido';
+
+    public function getTipoSituacao($numero){
+        switch($numero){
+            case 1: return TipoSituacao::VIVO;
+            case 2: return TipoSituacao::ABATIDO;
+        }
+    }
 }
 
 ?>

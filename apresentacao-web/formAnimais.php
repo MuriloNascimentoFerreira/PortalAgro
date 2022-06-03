@@ -23,14 +23,15 @@
         include_once("../persistencia/RepositoryAnimal.php");
 
         //criar o formulario de adicionar e a tabela de listar os animais
-
-        //criar a tabela de animais e fazer relação com os rebanhos
-
+        if(isset($_GET['id'])){
+         // se tiver esse paramentro na url ele vai buscar por todos os animais que pertencem a esse id(id do rebanho)
+        }
+       
     ?>
     <div class="container">
         <h1>Gerenciar Animais</h1>
-
-        <form action="ControllerAnimais.php" class="row gy-2 gx-3 align-items-center" method="post">
+ 
+        <form action="../logica/ControllerAnimal.php" class="row gy-2 gx-3 align-items-center" method="post">
             <div class="col-sm-6">
                 <label class="form-label" for="titulo">Título</label>
                 <input required type="text" class="form-control" id="titulo" name="descricao" placeholder="teste<?php /*echo $this->rebanho->getDescricao();*/?>">
