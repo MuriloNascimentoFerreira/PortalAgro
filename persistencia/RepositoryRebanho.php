@@ -9,12 +9,15 @@ class RepositoryRebanho extends Conexao{
     private $db;
 
     public function adicionar($rebanho){
-        $this->db = $this->conectaDB()->prepare("insert into rebanho values (?,?,?)");
+        session_start();
+        
+        $this->db = $this->conectaDB()->prepare("insert into rebanho values (?,?,?,?)");
 
         $this->db->bindValue("1",$rebanho->getId());
         $this->db->bindValue("2",$rebanho->getDescricao());
         $this->db->bindValue("3",$rebanho->getTipoRebanhoEmNumero($rebanho->getTipo()));
-        
+        $this->db->bindValue("4",$_SESSION['usuario_id']);
+
         $resultado = $this->db->execute();
 
         if($resultado ){
@@ -39,14 +42,18 @@ class RepositoryRebanho extends Conexao{
         $resultado = $this->db->execute();
         $lista = $this->db->fetchAll();
 
-        foreach($lista as $item){
-            $rebanho = new Rebanho();
-            $rebanho->setId($item['id']);
-            $rebanho->setDescricao($item['descricao']);
-            $rebanho->setTipo($rebanho->getTipoRebanhoEmString($item['tipo']));
-            $rebanhos[] = $rebanho;
-         
+        $rebanhos = array(); 
+
+        if($resultado){
+            foreach($lista as $item){
+                $rebanho = new Rebanho();
+                $rebanho->setId($item['id']);
+                $rebanho->setDescricao($item['descricao']);
+                $rebanho->setTipo($rebanho->getTipoRebanhoEmString($item['tipo']));
+                $rebanhos[] = $rebanho;
+            }
         }
+        
         return $rebanhos;
     }
 }

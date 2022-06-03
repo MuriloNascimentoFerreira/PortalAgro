@@ -41,7 +41,8 @@ class ControllerLogin extends Conexao{
             $this->resultado = 0;
         }
 
-        if($this->resultado == 1){
+        if($this->resultado == 1){ 
+            $this->registraUsuarioNaPagina();
             echo 
                 '<script>
                     window.location.replace("http://localhost/portalagro/apresentacao-web/rebanhos.php");
@@ -56,6 +57,16 @@ class ControllerLogin extends Conexao{
                 </script>';
             exit; 
         }
+    }
+
+    private function registraUsuarioNaPagina(){
+        $this->db = $this->conectaDB()->prepare("select id from usuario where email = ?");
+        $this->db->bindValue(1,$this->email);
+        $this->db->execute();
+        $fetch = $this->db->fetch(PDO::FETCH_ASSOC);
+
+        session_start();
+        $_SESSION['usuario_id'] = $fetch['id'];
     }
 }
 
