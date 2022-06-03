@@ -22,9 +22,6 @@
     <?php 
         include_once("../persistencia/RepositoryAnimal.php");
 
-        //pegar o usuario e listar todos os seus rebanhos
-            //alterar a função listar do arquivo repositoryRebanho
-
         //criar o formulario de adicionar e a tabela de listar os animais
 
         //criar a tabela de animais e fazer relação com os rebanhos

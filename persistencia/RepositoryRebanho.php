@@ -37,8 +37,11 @@ class RepositoryRebanho extends Conexao{
     }
 
     public function listar(){
+        session_start();
 
-        $this->db =$this->conectaDB()->prepare("select * from rebanho");
+        $this->db =$this->conectaDB()->prepare("select * from rebanho where usuario_id = ?");
+        
+        $this->db->bindValue("1",$_SESSION['usuario_id']);
         $resultado = $this->db->execute();
         $lista = $this->db->fetchAll();
 
