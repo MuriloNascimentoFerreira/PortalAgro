@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(!$_SESSION['logado']){
+        header('location:login.html');
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,6 +25,7 @@
 <body>
 
     <header>
+        <a href="logout.php" class="btn btn-secondary">Sair</a>
         <h1>Gerenciar rebanhos</h1>
         
     </header>
@@ -65,8 +72,10 @@
                 </thead>
                 <tbody>
                 
-                    <?php 
+                    <?php
+
                         include_once("../persistencia/RepositoryRebanho.php");
+                            
                         $repositoryRebanho = new RepositoryRebanho();
                         $rebanhos = $repositoryRebanho->listar();
 

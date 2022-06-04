@@ -25,17 +25,15 @@
         session_start();
         $repositoryRebanho = new RepositoryRebanho();
         $rebanho = $repositoryRebanho->getRebanho($_GET['id']);
-        $rebanho
+    
         //criar o formulario de adicionar e a tabela de listar os animais
-        if(isset($_GET['id']) && $rebanho->getId() == $_SESSION['usuario_id']){
+
+        if(isset($_GET['id'])){
          // se tiver esse paramentro na url ele vai buscar por todos os animais que pertencem a esse id(id do rebanho)
-            echo 'permitido 1';
-            if($rebanho->getId() == $_SESSION['usuario_id']){
-                echo 'permitido2';
-            }else{
-                echo "acesso negado";
+       
+            if($rebanho->getUsuario()->getId() != $_SESSION['usuario_id']){
                 header("location:rebanhos.php");
-            }   
+            }  
 
         }
        
@@ -68,7 +66,7 @@
 
         </form>
     
-        <h2 class="text-start mt-4 pb-1">Nome do rebanho atual<?php /*echo $this->animal->rebanho->getDescricao();*/?></h2>
+        <h2 class="text-start mt-4 pb-1"><?php echo $rebanho->getDescricao();?></h2>
 
         <!-- quando clicar deve chamar o animal controller e se tudo tiver certo chamar essa tela novamente com o animal já listado -->
         <form action="../logica/ControllerAnimal.php" class="row gy-2 gx-3 md-1 align-items-center" method="post">

@@ -3,7 +3,7 @@
 include_once('../logica/Conexao.php');
 include_once('../logica/Rebanho.php');
 include_once("../logica/enums.php");
-include_once("RepositoryAnimal.php");
+include_once("RepositoryUsuario.php");
 include_once("../logica/Usuario.php");
 
 class RepositoryRebanho extends Conexao{
@@ -11,7 +11,6 @@ class RepositoryRebanho extends Conexao{
     private $db;
 
     public function adicionar($rebanho){
-        session_start();
         
         $this->db = $this->conectaDB()->prepare("insert into rebanho values (?,?,?,?)");
 
@@ -39,7 +38,6 @@ class RepositoryRebanho extends Conexao{
     }
 
     public function listar(){
-        session_start();
 
         $this->db =$this->conectaDB()->prepare("select * from rebanho where usuario_id = ?");
         
@@ -72,7 +70,7 @@ class RepositoryRebanho extends Conexao{
             $rebanho->setId($dados['id']);
             $rebanho->setDescricao($dados['descricao']);
             $rebanho->setTipo($rebanho->getTipoRebanhoEmString($dados['tipo']));
-            $rebanho->setUsuario(recuperaUsuario($dados['usuario_id']));
+            $rebanho->setUsuario($this->recuperaUsuario($dados['usuario_id']));
         }
 
         return $rebanho;
@@ -81,6 +79,6 @@ class RepositoryRebanho extends Conexao{
     public function recuperaUsuario($usuario_id){
         $repositoryUsuario = new RepositoryUsuario();
         $usuario = $repositoryUsuario->getUsuario($usuario_id);
-
+        return $usuario;
     }
 }

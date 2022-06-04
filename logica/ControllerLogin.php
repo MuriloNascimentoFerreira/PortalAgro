@@ -67,6 +67,7 @@ class ControllerLogin extends Conexao{
 
         session_start();
         $_SESSION['usuario_id'] = $fetch['id'];
+        $_SESSION['logado'] = true;
     }
 }
 
