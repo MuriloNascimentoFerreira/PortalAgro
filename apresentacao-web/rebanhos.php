@@ -76,7 +76,7 @@
                         <td> <?php echo $rebanho->getDescricao()?> </td>
                         <td> <?php echo $rebanho->getTipo()?> </td>
                         <td> <?php echo ''?> </td>
-                        <td><a href="http://localhost/portalagro/logica/formAnimais.php?id=<?php echo $rebanho->getId(); ?>" class="btn btn-primary">Acessar</a></td>
+                        <td><a href="http://localhost/portalagro/apresentacao-web/formAnimais.php?id=<?php echo $rebanho->getId(); ?>" class="btn btn-primary">Acessar</a></td>
                         <td><a href="#" class="btn btn-danger">Excluir</a></td>
                         </tr>
                             

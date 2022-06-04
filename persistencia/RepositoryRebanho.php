@@ -59,4 +59,19 @@ class RepositoryRebanho extends Conexao{
         
         return $rebanhos;
     }
+
+    public function getRebanho($id){
+        $this->db = $this->conectaDB()->prepare("select * from rebanho where id = ?");
+        $this->db->bindValue(1,$id);
+
+        if($this->db->execute()){
+            $dados = $this->db->fetch();
+            $rebanho = new Rebanho();
+            $rebanho->setId($dados['id']);
+            $rebanho->setDescricao($dados['descricao']);
+            $rebanho->setTipo($rebanho->getTipoRebanhoEmString($dados['tipo']));
+        }
+        
+        return $rebanho;
+    }
 }

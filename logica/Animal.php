@@ -15,7 +15,7 @@ class Animal{
         $this->peso = 0;
         $this->dataNascimento = date("d/m/Y");
         $this->situacao = TipoSituacao::VIVO;
-
+        $this->rebanho = Rebanho::class;
     }
 
     public function getId(){

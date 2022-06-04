@@ -1,16 +1,18 @@
 <?php
-
+include_once("Usuario.php")
 class Rebanho{
 
     private $id;
     private $descricao;
     private $tipo;
+    private $usuario;
 
     public function __construct()
     {
         $this->id = 0;
         $this->descricao = '';
         $this->tipo = TipoRebanho::class;
+        $this->usuario = new Usuario();
     }
 
     public function getId(){
