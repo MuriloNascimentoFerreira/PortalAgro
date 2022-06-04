@@ -1,5 +1,6 @@
 <?php
-include_once("Usuario.php")
+include_once("Usuario.php");
+
 class Rebanho{
 
     private $id;
@@ -53,6 +54,10 @@ class Rebanho{
         }
     }
 
+    public function getUsuario(){
+        return $this->usuario;
+    }
+
     public function setId($id){
         $this->id = $id;
     }
@@ -63,6 +68,10 @@ class Rebanho{
 
     public function setTipo($tipo){
         $this->tipo = $tipo;
+    }
+
+    public function setUsuario($usuario){
+        $this->usuario = $usuario;
     }
 
 }

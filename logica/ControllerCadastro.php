@@ -1,25 +1,23 @@
 <?php
 include("Conexao.php");
+include_once("Usuario.php");
 
 // não cadastrar emails iguais (adicionar essa funcionalida)
 
 class ControllerCadastro extends Conexao{
 
-    private $nome;
-    private $sobrenome;
-    private $email;
-    private $senha;
-    private $confSenha;
+    private $usuario;
     private $resultado;
     private $conexao;
 
     public function __construct(){
 
-        $this->nome = $_POST['nome'];
-        $this->sobrenome = $_POST['sobrenome'];
-        $this->email = $_POST['email'];
-        $this->senha = $_POST['senha'];
-        $this->confSenha = $_POST['confSenha'];
+        $this->usuario = new Usuario();
+        $this->usuario->setNome($_POST['nome']);
+        $this->usuario->setSobrenome($_POST['sobrenome']);
+        $this->usuario->setEmail($_POST['email']);
+        $this->usuario->setSenha($_POST['senha']);
+        $this->usuario->setConfSenha($_POST['confSenha']);
 
         $this->validaDados();
 
@@ -27,7 +25,7 @@ class ControllerCadastro extends Conexao{
 
     private function validaDados(){
 
-        if($this->nome != null && $this->sobrenome != null && $this->email != null && $this->senha != null && $this->confSenha != null){
+        if($this->usuario->getNome() != null && $this->usuario->getSobrenome() != null && $this->usuario->getEmail() != null && $this->usuario->getSenha() != null && $this->usuario->getConfSenha() != null){
             $this->validaSenha();
         }
 
@@ -35,7 +33,7 @@ class ControllerCadastro extends Conexao{
 
     private function validaSenha(){
 
-        if($this->senha == $this->confSenha){
+        if($this->usuario->getSenha == $this->usuario->getConfSenha){
             $this->cadastraSenha();
         }else{
             echo '<script>
@@ -48,15 +46,15 @@ class ControllerCadastro extends Conexao{
 
     private function cadastraSenha(){
 
-        $this->senha = password_hash($this->senha ,PASSWORD_DEFAULT);
+        $this->usuario->setSenha(password_hash($this->usuario->getSenha(),PASSWORD_DEFAULT));
 
         $this->conexao = $this->conectaDB()->prepare("insert into usuario values (?,?,?,?,?)");
         $id = 0;
-        $this->conexao->bindValue("1", $id);
-        $this->conexao->bindValue("2", $this->nome);
-        $this->conexao->bindValue("3", $this->sobrenome);
-        $this->conexao->bindValue("4", $this->email);
-        $this->conexao->bindValue("5", $this->senha);
+        $this->conexao->bindValue("1", $this->usuario->getId());
+        $this->conexao->bindValue("2", $this->usuario->getNome());
+        $this->conexao->bindValue("3", $this->usuario->getSobrenome());
+        $this->conexao->bindValue("4", $this->usuario->getEmail());
+        $this->conexao->bindValue("5", $this->usuario->getSenha());
         
         $this->resultado = $this->conexao->execute();
 

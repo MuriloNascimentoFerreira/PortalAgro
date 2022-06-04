@@ -10,7 +10,7 @@ class ControllerLogin extends Conexao{
 
     public function __construct(){
 
-        $this->email= $_POST['email'];
+        $this->email = $_POST['email'];
         $this->senha = $_POST['senha'];   
         
         $this->validaDados();
