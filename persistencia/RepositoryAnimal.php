@@ -19,7 +19,7 @@ class RepositoryAnimal extends Conexao{
         return $animais = new Animal();
     }
 
-    public function getAnimal(){
+    public function getAnimal($id){
         
     }
 

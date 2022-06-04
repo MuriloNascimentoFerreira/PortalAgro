@@ -25,7 +25,7 @@
         session_start();
         $repositoryRebanho = new RepositoryRebanho();
         $rebanho = $repositoryRebanho->getRebanho($_GET['id']);
-        
+        $rebanho
         //criar o formulario de adicionar e a tabela de listar os animais
         if(isset($_GET['id']) && $rebanho->getId() == $_SESSION['usuario_id']){
          // se tiver esse paramentro na url ele vai buscar por todos os animais que pertencem a esse id(id do rebanho)

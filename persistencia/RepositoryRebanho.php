@@ -3,6 +3,8 @@
 include_once('../logica/Conexao.php');
 include_once('../logica/Rebanho.php');
 include_once("../logica/enums.php");
+include_once("RepositoryAnimal.php");
+include_once("../logica/Usuario.php");
 
 class RepositoryRebanho extends Conexao{
     
@@ -70,8 +72,15 @@ class RepositoryRebanho extends Conexao{
             $rebanho->setId($dados['id']);
             $rebanho->setDescricao($dados['descricao']);
             $rebanho->setTipo($rebanho->getTipoRebanhoEmString($dados['tipo']));
+            $rebanho->setUsuario(recuperaUsuario($dados['usuario_id']));
         }
-        
+
         return $rebanho;
+    }
+
+    public function recuperaUsuario($usuario_id){
+        $repositoryUsuario = new RepositoryUsuario();
+        $usuario = $repositoryUsuario->getUsuario($usuario_id);
+
     }
 }
