@@ -2,7 +2,7 @@
     if(session_status() == 1){
         session_start();
     }
-    
+
     if(!$_SESSION['logado']){
         header('location:login.php');
     }
@@ -33,7 +33,7 @@
 <body>
 
     <header>
-        <a href="logout.php" class="btn btn-secondary">Sair</a>
+        <a href="logout.php" class="btn btn-secondary float-right">Sair</a>
         <h1>Gerenciar rebanhos</h1>
         
     </header>
