@@ -10,6 +10,14 @@ class RepositoryRebanho extends Conexao{
     
     private $db;
 
+    public function __construct()
+    {
+        if(session_status() == 1){
+            session_start();
+        }
+            
+    }
+
     public function adicionar($rebanho){
         
         $this->db = $this->conectaDB()->prepare("insert into rebanho values (?,?,?,?)");
@@ -80,5 +88,27 @@ class RepositoryRebanho extends Conexao{
         $repositoryUsuario = new RepositoryUsuario();
         $usuario = $repositoryUsuario->getUsuario($usuario_id);
         return $usuario;
+    }
+
+    public function excluir($id){
+        $this->db = $this->conectaDB()->prepare("delete from rebanho where id=?");
+        $this->db->bindValue(1,$id);
+        $resultado = $this->db->execute();
+
+        if($resultado ){
+            echo 
+                '<script>
+                    window.location.replace("http://localhost/portalagro/apresentacao-web/rebanhos.php");
+                </script>';
+            exit;
+            
+        }else{
+            echo '
+                <script>
+                    window.alert("Rebanho não excluido")
+                </script>';
+            exit; 
+        }
+        
     }
 }

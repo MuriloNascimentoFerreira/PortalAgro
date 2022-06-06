@@ -1,8 +1,16 @@
 <?php
-    session_start();
-    if(!$_SESSION['logado']){
-        header('location:login.html');
+    if(session_status() == 1){
+        session_start();
     }
+    
+    if(!$_SESSION['logado']){
+        header('location:login.php');
+    }
+    if(isset($_GET['id'])){
+        $_SESSION['rebanho_id'] = $_GET['id'];
+        
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -82,11 +90,11 @@
                         foreach ($rebanhos as $rebanho):?>
                         <tr>
                         <th> <?php echo $rebanho->getId()?> </th>
-                        <td> <?php echo $rebanho->getDescricao()?> </td>
+                        <td class="align-center"> <?php echo $rebanho->getDescricao()?> </td>
                         <td> <?php echo $rebanho->getTipo()?> </td>
                         <td> <?php echo ''?> </td>
                         <td><a href="http://localhost/portalagro/apresentacao-web/formAnimais.php?id=<?php echo $rebanho->getId(); ?>" class="btn btn-primary">Acessar</a></td>
-                        <td><a href="#" class="btn btn-danger">Excluir</a></td>
+                        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmarExclusao">Excluir</button></td>
                         </tr>
                             
                         <?php endforeach; ?>
@@ -112,6 +120,26 @@
         <var>  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum et, sint deleniti nostrum omnis delectus expedita porro reprehenderit odio perspiciatis necessitatibus repudiandae beatae distinctio architecto, animi neque maiores nulla eveniet?</p>
         -->
     </footer>
+
+    <form action="http://localhost/portalagro/logica/confirmaExclusao.php?id=<?php echo $rebanho->getId(); ?>" method="POST">
+        <div class="modal" tabindex="-1" id="confirmarExclusao">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar Exclusão</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza que deseja excluir esse rebanho?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Sim</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </form>
 
     <script  type="text/javascript" src="js/javascript.js"></script>
 

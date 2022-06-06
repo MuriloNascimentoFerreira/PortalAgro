@@ -11,7 +11,6 @@ class ControllerRebanho{
 
     public function __construct()
     {
-        
         $this->rebanhoController = new Rebanho();
         $this->tipoRebanho = new TipoRebanho();
         $this->rebanhoController->setDescricao($_POST['descricao']);

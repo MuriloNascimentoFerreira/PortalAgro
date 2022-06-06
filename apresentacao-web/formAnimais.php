@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if(!$_SESSION['logado']){
+        header('location:login.html');
+    }
+    if(isset($_GET['id'])){
+        $_SESSION['rebanho_id'] = $_GET['id'];
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -22,13 +32,13 @@
     <?php 
         include_once("../persistencia/RepositoryRebanho.php");
         include_once("../logica/Rebanho.php");
-        session_start();
+
         $repositoryRebanho = new RepositoryRebanho();
-        $rebanho = $repositoryRebanho->getRebanho($_GET['id']);
+        $rebanho = $repositoryRebanho->getRebanho($_SESSION['rebanho_id']);
     
         //criar o formulario de adicionar e a tabela de listar os animais
 
-        if(isset($_GET['id'])){
+        if(isset($_SESSION['rebanho_id'])){
          // se tiver esse paramentro na url ele vai buscar por todos os animais que pertencem a esse id(id do rebanho)
        
             if($rebanho->getUsuario()->getId() != $_SESSION['usuario_id']){
@@ -44,12 +54,13 @@
         <form action="../logica/ControllerRebanhoEditar.php" class="row gy-2 gx-3 align-items-center" method="post">
             <div class="col-sm-6">
                 <label class="form-label" for="titulo">Título</label>
-                <input required type="text" class="form-control" id="titulo" name="descricao" placeholder="teste<?php /*echo $this->animal->rebanho->getDescricao();*/?>">
+                <input required type="text" class="form-control" id="titulo" name="descricao" value="<?php echo $rebanho->getDescricao();?>">
             </div>
             <div class="col-md-3">
                 <label class="form-label" for="autoSinizingSelect">Tipo</label>
                 <select class="form-select" id="select" name="tipo">
-                    <option selected value="<?php /*echo $this->animal->rebanho->getTipoEmNumero();*/?>"><?php /*echo $this->animal->rebanho->getTipoEmString();*/?></option>
+                    
+                <option selected value="<?php echo $rebanho->getTipoRebanhoEmNumero($rebanho->getTipo());?>"> <?php echo $rebanho->getTipo();?> </option>
                     <option value="1">Assinino</option>
                     <option value="3">Bufalino</option>
                     <option value="4">Caprino</option>
@@ -68,11 +79,10 @@
     
         <h2 class="text-start mt-4 pb-1"><?php echo $rebanho->getDescricao();?></h2>
 
-        <!-- quando clicar deve chamar o animal controller e se tudo tiver certo chamar essa tela novamente com o animal já listado -->
         <form action="../logica/ControllerAnimal.php" class="row gy-2 gx-3 md-1 align-items-center" method="post">
             <div class="col-sm-2">
                 <label class="form-label" for="racao">Ração(kg)</label>
-                <input required type="text" class="form-control" id="racao" name="racao" placeholder="Ex: 5">
+                <input required type="text" class="form-control" id="racao" name="racao" placeholder="">
             </div>
 
             <div class="col-sm-2">
@@ -130,7 +140,8 @@
 
                             <!-- http://localhost/portalagro/logica/ControllerAnimalEditar.php?id=<?php /*echo $rebanho->getId(); */?> -->
 
-                        <td><a href="#" class="btn btn-primary">Acessar</a></td>
+                        <td><a href="#" class="btn btn-primary">Editar</a></td>    
+                        <td><a href="#" class="btn btn-warning">Abater</a></td>
                         <td><a href="#" class="btn btn-danger">Excluir</a></td>
                         </tr>
                             

@@ -66,6 +66,7 @@ class ControllerLogin extends Conexao{
         $fetch = $this->db->fetch(PDO::FETCH_ASSOC);
 
         session_start();
+        echo 'aaa';
         $_SESSION['usuario_id'] = $fetch['id'];
         $_SESSION['logado'] = true;
     }
