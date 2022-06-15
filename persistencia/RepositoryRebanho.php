@@ -111,4 +111,29 @@ class RepositoryRebanho extends Conexao{
         }
         
     }
+
+    public function editar($rebanho){
+       
+        $this->db = $this->conectaDB()->prepare("UPDATE rebanho SET descricao=?, tipo=? where id=?");
+        $this->db->bindValue(1,$rebanho->getDescricao());
+        $this->db->bindValue(2,$rebanho->getTipoRebanhoEmNumero($rebanho->getTipo()));
+        $this->db->bindValue(3,$rebanho->getId());
+        $resultado = $this->db->execute();
+
+        if($resultado ){
+            echo 
+                '<script>
+                    window.location.replace("http://localhost/portalagro/apresentacao-web/formAnimais.php");
+                </script>';
+            exit;
+            
+        }else{
+            echo '
+                <script>
+                    window.alert("Rebanho não alterado")
+                </script>';
+            exit; 
+        }
+        
+    }
 }

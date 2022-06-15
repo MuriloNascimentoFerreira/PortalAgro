@@ -36,7 +36,6 @@
         $repositoryRebanho = new RepositoryRebanho();
         $rebanho = $repositoryRebanho->getRebanho($_SESSION['rebanho_id']);
     
-        //criar o formulario de adicionar e a tabela de listar os animais
 
         if(isset($_SESSION['rebanho_id'])){
          // se tiver esse paramentro na url ele vai buscar por todos os animais que pertencem a esse id(id do rebanho)
@@ -51,7 +50,7 @@
     <div class="container">
         <h1 class="pb-1">Gerenciar Animais</h1>
  
-        <form action="../logica/ControllerRebanhoEditar.php" class="row gy-2 gx-3 align-items-center" method="post">
+        <form action="../logica/ControllerEditarRebanho.php?id=<?php echo $rebanho->getId();?>" class="row gy-2 gx-3 align-items-center" method="post">
             <div class="col-sm-6">
                 <label class="form-label" for="titulo">Título</label>
                 <input required type="text" class="form-control" id="titulo" name="descricao" value="<?php echo $rebanho->getDescricao();?>">
