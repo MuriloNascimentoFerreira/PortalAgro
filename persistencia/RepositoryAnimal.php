@@ -72,5 +72,26 @@ class RepositoryAnimal extends Conexao{
         return $repositoryRebanho->getRebanho($id); 
     }
 
+    public function excluir($id){
+        $this->db = $this->conectaDB()->prepare("delete from animal where id=?");
+        $this->db->bindValue(1,$id);
+        $resultado = $this->db->execute();
+
+        if($resultado ){
+            echo 
+                '<script>
+                    window.location.replace("http://localhost/portalagro/apresentacao-web/formAnimais.php");
+                </script>';
+            exit;
+            
+        }else{
+            echo '
+                <script>
+                    window.alert("Rebanho não excluido")
+                </script>';
+            exit; 
+        }
+    }
+
 }
 ?>

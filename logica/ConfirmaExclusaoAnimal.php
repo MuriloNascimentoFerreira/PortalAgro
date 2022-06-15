@@ -5,14 +5,15 @@ class ConfirmaExclusao{
 
     public function __construct()
     {
-        $this->excluirRebanho();
+        $this->excluirAnimal();
     }
 
-    public function excluirRebanho(){
-        $repositoryRebanho = new RepositoryRebanho();
+    public function excluirAnimal(){
+        $repositoryAnimal = new RepositoryAnimal();
         if(isset($_GET['id'])){
-            $repositoryRebanho->excluir($_GET['id']);
+            $repositoryAnimal->excluir($_GET['id']);
         }
+        
     }
 }
 $new = new ConfirmaExclusao();

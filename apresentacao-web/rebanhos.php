@@ -121,7 +121,7 @@
         -->
     </footer>
 
-    <form action="http://localhost/portalagro/logica/confirmaExclusao.php?id=<?php echo $rebanho->getId(); ?>" method="POST">
+    <form action="http://localhost/portalagro/logica/ConfirmaExclusao.php?id=<?php echo $rebanho->getId(); ?>" method="POST">
         <div class="modal" tabindex="-1" id="confirmarExclusao">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -133,7 +133,7 @@
                     <p>Tem certeza que deseja excluir esse rebanho?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-primary">Sim</button>
                 </div>
                 </div>

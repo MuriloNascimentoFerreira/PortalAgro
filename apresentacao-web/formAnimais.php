@@ -76,8 +76,8 @@
             </div>
 
         </form>
-    
-        <h2 class="text-start mt-4 pb-1"><?php echo $rebanho->getDescricao();?></h2>
+
+        <h2 class="text-start mt-4 pb-1">Adicionar animal ao rebanho</h2>
 
         <form action="../logica/ControllerAnimal.php" class="row gy-2 gx-3 md-1 align-items-center" method="post">
             <div class="col-sm-2">
@@ -109,6 +109,8 @@
 
         </form>
         
+        <h3 class="text-start mt-3 pb-2"><?php echo $rebanho->getDescricao();?></h3>
+
         <div class="container">
             <table class="table">
                 <thead>
@@ -142,7 +144,7 @@
 
                         <td><a href="#" class="btn btn-primary">Editar</a></td>    
                         <td><a href="#" class="btn btn-warning">Abater</a></td>
-                        <td><a href="#" class="btn btn-danger">Excluir</a></td>
+                        <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmarExclusao">Excluir</button></td>
                         </tr>
                             
                         <?php endforeach; ?>
@@ -151,6 +153,26 @@
         </div>
 
     </div>
+
+    <form action="http://localhost/portalagro/logica/ConfirmaExclusaoAnimal.php?id=<?php echo $animal->getId(); ?>" method="POST">
+        <div class="modal" tabindex="-1" id="confirmarExclusao">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar Exclusão</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza que deseja excluir esse animal?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Sim</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </form>
     
     <script  type="text/javascript" src="js/javascript.js"></script>
 
