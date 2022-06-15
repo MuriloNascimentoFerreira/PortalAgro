@@ -121,7 +121,7 @@
         -->
     </footer>
 
-    <form action="http://localhost/portalagro/logica/ConfirmaExclusao.php?id=<?php echo $rebanho->getId(); ?>" method="POST">
+    <form action="http://localhost/portalagro/logica/ControllerExclusaoRebanho.php?id=<?php echo $rebanho->getId(); ?>" method="POST">
         <div class="modal" tabindex="-1" id="confirmarExclusao">
             <div class="modal-dialog">
                 <div class="modal-content">

@@ -1,7 +1,7 @@
 <?php
 include_once("../persistencia/RepositoryAnimal.php");
 
-class ConfirmaExclusao{
+class ControllerExclusaoRebanho{
 
     public function __construct()
     {
@@ -15,5 +15,5 @@ class ConfirmaExclusao{
         }
     }
 }
-$new = new ConfirmaExclusao();
+$new = new ControllerExclusaoRebanho();
 ?>
