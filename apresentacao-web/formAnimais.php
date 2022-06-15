@@ -154,7 +154,7 @@
 
     </div>
 
-    <form action="http://localhost/portalagro/logica/ConfirmaExclusaoAnimal.php?id=<?php echo $animal->getId(); ?>" method="POST">
+    <form action="http://localhost/portalagro/logica/ControllerExclusaoAnimal.php?id=<?php echo $animal->getId(); ?>" method="POST">
         <div class="modal" tabindex="-1" id="confirmarExclusao">
             <div class="modal-dialog">
                 <div class="modal-content">
