@@ -47,6 +47,7 @@
         }
        
     ?>
+    <a href="rebanhos.php" class="btn btn-secondary float-left">Voltar</a>
     <div class="container">
         <h1 class="pb-1">Gerenciar Animais</h1>
  
@@ -97,7 +98,7 @@
             <div class="col-md-2">
                 <label class="form-label" for="select">Situação</label>
                 <select class="form-select" id="select" name="situacao">
-                    <option selected value="1">Vivo </option>
+                    <option selected value="1">Vivo</option>
                     <option value="2">Abatido</option>
                   </select>
             </div>
@@ -141,8 +142,16 @@
 
                             <!-- http://localhost/portalagro/logica/ControllerAnimalEditar.php?id=<?php /*echo $rebanho->getId(); */?> -->
 
-                        <td><a href="#" class="btn btn-primary">Editar</a></td>    
-                        <td><a href="#" class="btn btn-warning">Abater</a></td>
+                        <td><a href="#" class="btn btn-primary">Editar</a></td>  
+
+                        <td><a href="../logica/ControllerMudarSituacaoAnimal.php?id=<?php echo $animal->getId() ?>" class="btn btn-warning">
+                        <?php if ($animal->getSituacao() == TipoSituacao::VIVO){  
+                            echo "Abater";
+                        }else{
+                            echo "Cancelar Abatimento";
+                        }
+                        ?></a></td>
+
                         <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmarExclusao">Excluir</button></td>
                         </tr>
                             

@@ -38,8 +38,8 @@ class Animal{
         return $this->situacao; 
     }
 
-    public function getSituacaoNumero($numero){
-        switch($numero){
+    public function getSituacaoNumero($tipo){
+        switch($tipo){
             case TipoSituacao::VIVO: return 1;
             case TipoSituacao::ABATIDO: return 2;
         }
@@ -74,7 +74,7 @@ class Animal{
     }
 
     public function setSituacao($tipoSituacao){
-        $this->tipoSituacao = $tipoSituacao;
+        $this->situacao = $tipoSituacao;
     }
 
     public function setRebanho($rebanho){
