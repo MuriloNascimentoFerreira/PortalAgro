@@ -38,7 +38,6 @@
     
 
         if(isset($_SESSION['rebanho_id'])){
-         // se tiver esse paramentro na url ele vai buscar por todos os animais que pertencem a esse id(id do rebanho)
        
             if($rebanho->getUsuario()->getId() != $_SESSION['usuario_id']){
                 header("location:rebanhos.php");
@@ -140,9 +139,7 @@
                         <td> <?php echo $animal->getDataNascimento()?> </td>
                         <td> <?php echo $animal->getSituacao()?> </td>
 
-                            <!-- http://localhost/portalagro/logica/ControllerAnimalEditar.php?id=<?php /*echo $rebanho->getId(); */?> -->
-
-                        <td><a href="#" class="btn btn-primary">Editar</a></td>  
+                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarAnimal">Editar</button></td>  
 
                         <td><a href="../logica/ControllerMudarSituacaoAnimal.php?id=<?php echo $animal->getId() ?>" class="btn btn-warning">
                         <?php if ($animal->getSituacao() == TipoSituacao::VIVO){  
@@ -176,6 +173,59 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-primary">Sim</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <form action="http://localhost/portalagro/logica/ControllerEditarAnimal.php?id=<?php echo $animal->getId(); ?>" method="POST">
+        <div class="modal" tabindex="-1" id="editarAnimal">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Editar Animal</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body row">
+                    <div class="col-sm-2">
+                        <label class="form-label" for="racao">Ração(kg)</label>
+                        <input required type="text" class="form-control" id="racao" name="racao" value= "<?php echo $animal->getRacao()?>">
+                    </div>
+
+                    <div class="col-sm-2">
+                        <label class="form-label" for="peso">Peso(kg)</label>
+                        <input required type="text" class="form-control" id="peso" name="peso" placeholder="" value= "<?php echo $animal->getPeso()?>">
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="form-label" for="titulo">Data De Nascimento</label>
+                        <input required type="date" class="form-control" id="dataNascimento" name="dataNascimento" placeholder="" value= "<?php echo $animal->getDataNascimento()?>">
+                    </div>
+
+                    <div class="col-md-2">
+                        <label class="form-label" for="select">Situação</label>
+                        <select class="form-select" id="select" name="situacao">
+                            <option selected value="<?php echo $animal->getSituacaoNumero($animal->getSituacao())?>"><?php echo $animal->getSituacao()?></option>
+    
+                            <option value="<?php if($animal->getSituacao() == 'Vivo'){
+                                echo 2;
+                            }else{
+                                echo 1;
+                            }?>"><?php if($animal->getSituacao() == 'Vivo'){
+                                echo "Abatido";
+                            }else{
+                                echo "Vivo";
+                            }?></option>
+                        </select>
+                    </div>
+
+                    <!-- adicionar uma tabela com os histórico de modificações do animal -->
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
                 </div>
             </div>

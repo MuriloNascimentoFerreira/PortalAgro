@@ -146,7 +146,7 @@ class RepositoryAnimal extends Conexao{
             echo 
                 '<script>
                     window.location.replace("http://localhost/portalagro/apresentacao-web/formAnimais.php");
-                </script>';   //adicionar um script para trocar botão(cor ou a descricao do botão) 
+                </script>';  
             exit;
             
         }else{

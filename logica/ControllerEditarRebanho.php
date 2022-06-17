@@ -31,5 +31,4 @@ class ControllerEditarRebanho{
 }
 
 $controllerEditarRebanho = new ControllerEditarRebanho();
-    //editar rebanho 
 ?>
