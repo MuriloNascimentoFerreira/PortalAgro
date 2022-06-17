@@ -30,7 +30,7 @@ class ControllerLogin extends Conexao{
 
     private function autenticaSenha(){
 
-        $this->db = $this->conectaDB()->prepare("select email,senha from usuario where email = ?");
+        $this->db = $this->conectaDB()->prepare("SELECT email,senha from usuario where email = ?");
         $this->db->bindValue(1,$this->email);
         $this->db->execute();
         $fetch = $this->db->fetch(PDO::FETCH_ASSOC);
@@ -60,13 +60,12 @@ class ControllerLogin extends Conexao{
     }
 
     private function registraUsuarioNaPagina(){
-        $this->db = $this->conectaDB()->prepare("select id from usuario where email = ?");
+        $this->db = $this->conectaDB()->prepare("SELECT id from usuario where email = ?");
         $this->db->bindValue(1,$this->email);
         $this->db->execute();
         $fetch = $this->db->fetch(PDO::FETCH_ASSOC);
 
         session_start();
-        echo 'aaa';
         $_SESSION['usuario_id'] = $fetch['id'];
         $_SESSION['logado'] = true;
     }
