@@ -143,9 +143,9 @@
 
                         <td><a href="../logica/ControllerMudarSituacaoAnimal.php?id=<?php echo $animal->getId() ?>" class="btn btn-warning">
                         <?php if ($animal->getSituacao() == TipoSituacao::VIVO){  
-                            echo "Abater";
+                            echo "Vivo";
                         }else{
-                            echo "Cancelar Abatimento";
+                            echo "Abatido";
                         }
                         ?></a></td>
 
