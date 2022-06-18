@@ -2,7 +2,7 @@
 
 class TipoRebanho 
 {
-    const ASSININO = 'Assinino';
+    const ASSININO = 'Asinino';
     const BOVINO = 'Bovino'; 
     const BUFALINO = 'Bufalino';
     const CAPRINO = 'Caprino';

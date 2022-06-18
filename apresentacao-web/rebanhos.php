@@ -1,4 +1,5 @@
 <?php
+include_once("../logica/enums.php");
     if(session_status() == 1){
         session_start();
     }
@@ -48,14 +49,15 @@
             <div class="col-md-3">
                 <label class="form-label" for="autoSinizingSelect">Tipo</label>
                 <select class="form-select" id="select" name="tipo">
-                    <option selected value="2">Bovino</option>
-                    <option value="1">Assinino</option>
-                    <option value="3">Bufalino</option>
-                    <option value="4">Caprino</option>
-                    <option value="5">Equino</option>
-                    <option value="6">Muar</option>
-                    <option value="7">Ovino</option>
-                    <option value="8">Suíno</option>
+                    <option selected value="2"><?php echo TipoRebanho::BOVINO ?></option>
+
+                    <option value="1"><?php echo TipoRebanho::ASSININO ?></option>
+                    <option value="3"><?php echo TipoRebanho::BUFALINO ?></option>
+                    <option value="4"><?php echo TipoRebanho::CAPRINO?></option>
+                    <option value="5"><?php echo TipoRebanho::EQUINO ?></option>
+                    <option value="6"><?php echo TipoRebanho::MUAR ?></option>
+                    <option value="7"><?php echo TipoRebanho::OVINO ?></option>
+                    <option value="8"><?php echo TipoRebanho::SUINO?></option>
                   </select>
             </div>
 

@@ -19,6 +19,9 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script type="text/javascript" src="js/formatarHora.js"></script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
@@ -60,13 +63,39 @@
                 <select class="form-select" id="select" name="tipo">
                     
                 <option selected value="<?php echo $rebanho->getTipoRebanhoEmNumero($rebanho->getTipo());?>"> <?php echo $rebanho->getTipo();?> </option>
-                    <option value="1">Assinino</option>
-                    <option value="3">Bufalino</option>
-                    <option value="4">Caprino</option>
-                    <option value="5">Equino</option>
-                    <option value="6">Muar</option>
-                    <option value="7">Ovino</option>
-                    <option value="8">Suíno</option>
+                    
+                    <?php if($rebanho->getTipo() != TipoRebanho::ASSININO):?>
+                        <option value="1"><?php echo TipoRebanho::ASSININO?></option>
+                    <?php endif ?>
+
+                    <?php if($rebanho->getTipo() != TipoRebanho::BOVINO):?>
+                        <option value="2"><?php echo TipoRebanho::BOVINO?></option>
+                    <?php endif ?>
+
+                    <?php if($rebanho->getTipo() != TipoRebanho::BUFALINO):?>
+                        <option value="3"><?php echo TipoRebanho::BUFALINO?></option>
+                    <?php endif ?>
+
+                    <?php if($rebanho->getTipo() != TipoRebanho::CAPRINO):?>
+                        <option value="4"><?php echo TipoRebanho::CAPRINO?></option>
+                    <?php endif ?>
+
+                    <?php if($rebanho->getTipo() != TipoRebanho::EQUINO):?>
+                        <option value="5"><?php echo TipoRebanho::EQUINO?></option>
+                    <?php endif ?>
+
+                    <?php if($rebanho->getTipo() != TipoRebanho::MUAR):?>
+                        <option value="6"><?php echo TipoRebanho::MUAR?></option>
+                    <?php endif ?>
+
+                    <?php if($rebanho->getTipo() != TipoRebanho::OVINO):?>
+                        <option value="7"><?php echo TipoRebanho::OVINO?></option>
+                    <?php endif ?>
+
+                    <?php if($rebanho->getTipo() != TipoRebanho::SUINO):?>
+                        <option value="8"><?php echo TipoRebanho::SUINO ?></option>
+                    <?php endif ?>
+
                   </select>
             </div>
 
@@ -91,9 +120,9 @@
 
             <div class="col-sm-3">
                 <label class="form-label" for="titulo">Data De Nascimento</label>
-                <input required type="date" class="form-control" id="dataNascimento" name="dataNascimento" placeholder="">
+                <input required type="text" class="form-control" id="dataNascimento" name="dataNascimento" onfocus="formatarHora()">
             </div>
-
+            
             <div class="col-md-2">
                 <label class="form-label" for="select">Situação</label>
                 <select class="form-select" id="select" name="situacao">
@@ -143,9 +172,9 @@
 
                         <td><a href="../logica/ControllerMudarSituacaoAnimal.php?id=<?php echo $animal->getId() ?>" class="btn btn-warning">
                         <?php if ($animal->getSituacao() == TipoSituacao::VIVO){  
-                            echo "Vivo";
+                            echo "Abater";
                         }else{
-                            echo "Abatido";
+                            echo "Cancelar Abate";
                         }
                         ?></a></td>
 
@@ -232,7 +261,7 @@
         </div>
     </form>
     
-    <script  type="text/javascript" src="js/javascript.js"></script>
+    <script type="text/javascript" src="js/javascript.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
