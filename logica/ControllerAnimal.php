@@ -14,6 +14,7 @@ class ControllerAnimal{
         $this->animal->setRacao($_POST['racao']);
         $this->animal->setPeso($_POST['peso']);
         $this->animal->setDataNascimento($_POST['dataNascimento']);
+        echo $_POST['dataNascimento'];
         $this->animal->setSituacao($this->animal->getSituacaoString($_POST['situacao']));
         $this->validaDados();
     }

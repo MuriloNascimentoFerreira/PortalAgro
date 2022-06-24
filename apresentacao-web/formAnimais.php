@@ -23,6 +23,9 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script type="text/javascript" src="js/formatarHora.js"></script>
   
+    <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 
@@ -119,8 +122,8 @@
             </div>
 
             <div class="col-sm-3">
-                <label class="form-label" for="titulo">Data De Nascimento</label>
-                <input required type="text" class="form-control" id="dataNascimento" name="dataNascimento" onfocus="formatarHora()">
+                <label class="form-label" for="titulo">Data de Nascimento</label>
+                <input required type="data" class="form-control" id="dataNascimento" name="dataNascimento" onfocus="formatarHora()">
             </div>
             
             <div class="col-md-2">
