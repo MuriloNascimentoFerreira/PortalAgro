@@ -40,7 +40,7 @@ include_once("../logica/enums.php");
     </header>
     
     <main class="container">
-        <form action="http://localhost/portalagro/logica/ControllerRebanho.php" class="row gy-2 gx-3 align-items-center" method="post">
+        <form action="../logica/ControllerRebanho.php" class="row gy-2 gx-3 align-items-center" method="post">
             <div class="col-sm-6">
                 <label class="form-label" for="form-label">Título</label>
                 <input required type="text" class="form-control" id="titulo" name="descricao" placeholder="Ex: Gado do pasto alugado">
@@ -95,7 +95,7 @@ include_once("../logica/enums.php");
                         <td class="align-center"> <?php echo $rebanho->getDescricao()?> </td>
                         <td> <?php echo $rebanho->getTipo()?> </td>
                         <td> <?php echo ''?> </td>
-                        <td><a href="http://localhost/portalagro/apresentacao-web/formAnimais.php?id=<?php echo $rebanho->getId(); ?>" class="btn btn-primary">Acessar</a></td>
+                        <td><a href="../apresentacao-web/formAnimais.php?id=<?php echo $rebanho->getId(); ?>" class="btn btn-primary">Acessar</a></td>
                         <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmarExclusao">Excluir</button></td>
                         </tr>
                             
@@ -123,7 +123,7 @@ include_once("../logica/enums.php");
         -->
     </footer>
 
-    <form action="http://localhost/portalagro/logica/ControllerExclusaoRebanho.php?id=<?php echo $rebanho->getId(); ?>" method="POST">
+    <form action="../logica/ControllerExclusaoRebanho.php?id=<?php echo $rebanho->getId(); ?>" method="POST">
         <div class="modal" tabindex="-1" id="confirmarExclusao">
             <div class="modal-dialog">
                 <div class="modal-content">

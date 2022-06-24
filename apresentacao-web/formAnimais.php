@@ -188,7 +188,7 @@
 
     </div>
 
-    <form action="http://localhost/portalagro/logica/ControllerExclusaoAnimal.php?id=<?php echo $animal->getId(); ?>" method="POST">
+    <form action="../logica/ControllerExclusaoAnimal.php?id=<?php echo $animal->getId(); ?>" method="POST">
         <div class="modal" tabindex="-1" id="confirmarExclusao">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -208,7 +208,7 @@
         </div>
     </form>
 
-    <form action="http://localhost/portalagro/logica/ControllerEditarAnimal.php?id=<?php echo $animal->getId(); ?>" method="POST">
+    <form action="../logica/ControllerEditarAnimal.php?id=<?php echo $animal->getId(); ?>" method="POST">
         <div class="modal" tabindex="-1" id="editarAnimal">
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">

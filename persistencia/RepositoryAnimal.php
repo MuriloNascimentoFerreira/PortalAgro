@@ -24,7 +24,7 @@ class RepositoryAnimal extends Conexao{
         if($resultado){
             echo 
                 '<script>
-                    window.location.replace("http://localhost/portalagro/apresentacao-web/formAnimais.php");
+                    window.location.replace("../apresentacao-web/formAnimais.php");
                 </script>';
             exit;
             
@@ -94,7 +94,7 @@ class RepositoryAnimal extends Conexao{
         if($resultado ){
             echo 
                 '<script>
-                    window.location.replace("http://localhost/portalagro/apresentacao-web/formAnimais.php");
+                    window.location.replace("../apresentacao-web/formAnimais.php");
                 </script>';
             exit;
             
@@ -120,7 +120,7 @@ class RepositoryAnimal extends Conexao{
         if($resultado ){
             echo 
                 '<script>
-                    window.location.replace("http://localhost/portalagro/apresentacao-web/formAnimais.php");
+                    window.location.replace("../apresentacao-web/formAnimais.php");
                 </script>';
             exit;
             
@@ -145,7 +145,7 @@ class RepositoryAnimal extends Conexao{
         if($resultado ){
             echo 
                 '<script>
-                    window.location.replace("http://localhost/portalagro/apresentacao-web/formAnimais.php");
+                    window.location.replace("../apresentacao-web/formAnimais.php");
                 </script>';  
             exit;
             

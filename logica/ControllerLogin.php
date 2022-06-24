@@ -45,7 +45,7 @@ class ControllerLogin extends Conexao{
             $this->registraUsuarioNaPagina();
             echo 
                 '<script>
-                    window.location.replace("http://localhost/portalagro/apresentacao-web/rebanhos.php");
+                    window.location.replace("../apresentacao-web/rebanhos.php");
                 </script>';
             exit;
             

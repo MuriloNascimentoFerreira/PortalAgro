@@ -20,7 +20,7 @@ class RepositoryRebanho extends Conexao{
 
     public function adicionar($rebanho){
         
-        $this->db = $this->conectaDB()->prepare("insert into rebanho values (?,?,?,?)");
+        $this->db = $this->conectaDB()->prepare("INSERT INTO rebanho VALUES (?,?,?,?)");
 
         $this->db->bindValue("1",$rebanho->getId());
         $this->db->bindValue("2",$rebanho->getDescricao());
@@ -32,7 +32,7 @@ class RepositoryRebanho extends Conexao{
         if($resultado ){
             echo 
                 '<script>
-                    window.location.replace("http://localhost/portalagro/apresentacao-web/rebanhos.php");
+                    window.location.replace("../apresentacao-web/rebanhos.php");
                 </script>';
             exit;
             
@@ -47,7 +47,7 @@ class RepositoryRebanho extends Conexao{
 
     public function listar(){
 
-        $this->db =$this->conectaDB()->prepare("select * from rebanho where usuario_id = ?");
+        $this->db =$this->conectaDB()->prepare("SELECT * from rebanho where usuario_id = ?");
         
         $this->db->bindValue("1",$_SESSION['usuario_id']);
         $resultado = $this->db->execute();
@@ -69,7 +69,7 @@ class RepositoryRebanho extends Conexao{
     }
 
     public function getRebanho($id){
-        $this->db = $this->conectaDB()->prepare("select * from rebanho where id = ?");
+        $this->db = $this->conectaDB()->prepare("SELECT * from rebanho where id = ?");
         $this->db->bindValue(1,$id);
 
         if($this->db->execute()){
@@ -91,14 +91,14 @@ class RepositoryRebanho extends Conexao{
     }
 
     public function excluir($id){
-        $this->db = $this->conectaDB()->prepare("delete from rebanho where id=?");
+        $this->db = $this->conectaDB()->prepare("DELETE FROM rebanho WHERE id=?");
         $this->db->bindValue(1,$id);
         $resultado = $this->db->execute();
 
         if($resultado ){
             echo 
                 '<script>
-                    window.location.replace("http://localhost/portalagro/apresentacao-web/rebanhos.php");
+                    window.location.replace("../apresentacao-web/rebanhos.php");
                 </script>';
             exit;
             
@@ -123,7 +123,7 @@ class RepositoryRebanho extends Conexao{
         if($resultado ){
             echo 
                 '<script>
-                    window.location.replace("http://localhost/portalagro/apresentacao-web/formAnimais.php");
+                    window.location.replace("../apresentacao-web/formAnimais.php");
                 </script>';
             exit;
             

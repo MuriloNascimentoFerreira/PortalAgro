@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <h2>Faça o login para continuar</h2>
 
-        <form action="http://localhost/portalagro/logica/ControllerLogin.php" method="post">
+        <form action="../logica/ControllerLogin.php" method="post">
             <div class="form-group" >
               <label for="exampleInputEmail1">Endereço de email</label>
               <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email" name="email">

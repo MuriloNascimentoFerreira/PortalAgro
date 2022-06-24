@@ -7,7 +7,7 @@ class RepositoryUsuario extends Conexao{
 
     public function getUsuario($id)
     {
-        $this->db = $this->conectaDB()->prepare("select * from usuario where id = ?");
+        $this->db = $this->conectaDB()->prepare("SELECT * FROM usuario WHERE id = ?");
         $this->db->bindValue(1,$id);
 
         if($this->db->execute()){
