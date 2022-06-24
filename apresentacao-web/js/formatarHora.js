@@ -4,6 +4,6 @@ function formatarHora(){
 
     data.flatpickr({
         enableTime: false,
-        dateFormat:"d-m-Y",
+        dateFormat:"d/m/Y",
     })
 }
