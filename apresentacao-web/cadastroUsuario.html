@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/styleform.css">
 </head>
 <body>
-    <h2 style="margin-right: 55px;">Cadastro</h2>
+    <h2>Cadastro</h2>
 
     <div class="container-fluid">
         <form id="form-cadastro" action="../logica/ControllerCadastro.php" method="post">
@@ -37,7 +37,10 @@
                 <input required type="password" class="form-control" id="confSenha" placeholder="Repita sua Senha" name="confSenha">
             </div>
 
-            <button type="submit" class="btn btn-primary ml-3 mt-3  col-md-10">Finalizar Cadastro</button>
+            <div class="col-md-10">
+                <button type="submit" class="btn btn-primary btn-block mt-2">Finalizar Cadastro</button>
+            </div>
+            
         </form>
 
     </div>  
