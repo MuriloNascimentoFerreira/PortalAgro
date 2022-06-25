@@ -148,7 +148,6 @@ class RepositoryAnimal extends Conexao{
                     window.location.replace("../apresentacao-web/formAnimais.php");
                 </script>';  
             exit;
-            
         }else{
             echo 
                 '<script>

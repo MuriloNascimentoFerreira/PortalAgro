@@ -34,6 +34,18 @@ class Animal{
         return $this->dataNascimento;
     }
 
+    public function getDataNascimentoBr(){
+
+        if (mb_strpos($this->dataNascimento,"-") !== false){
+
+            $dataUs = DateTime::createFromFormat("Y-m-d", $this->dataNascimento);
+            $dataBr = $dataUs->format("d/m/Y");
+            return $dataBr;
+
+        }
+        return $this->dataNascimento;
+    }
+
     public function getSituacao(){
         return $this->situacao; 
     }
@@ -70,7 +82,16 @@ class Animal{
     }
 
     public function setDataNascimento($dataNascimento){
-        $this->dataNascimento = $dataNascimento;
+
+        if (mb_strpos($dataNascimento, "/") !== false){
+            $dataBr = DateTime::createFromFormat("d/m/Y", $dataNascimento);
+            $dataUs = $dataBr->format("Y-m-d");
+            $this->dataNascimento = $dataUs;
+
+        }else{
+            $this->dataNascimento = $dataNascimento;
+        }
+
     }
 
     public function setSituacao($tipoSituacao){

@@ -21,7 +21,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script type="text/javascript" src="js/formatarHora.js"></script>
+    <script type="text/javascript" src="js/formatarData.js"></script>
   
     <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
@@ -123,7 +123,7 @@
 
             <div class="col-sm-3">
                 <label class="form-label" for="titulo">Data de Nascimento</label>
-                <input required type="data" class="form-control" id="dataNascimento" name="dataNascimento" onfocus="formatarHora()">
+                <input required type="text" class="form-control" id="dataNascimento" name="dataNascimento" onfocus="formatarData()">
             </div>
             
             <div class="col-md-2">
@@ -168,7 +168,7 @@
                         <th> <?php echo $animal->getId()?> </th>
                         <td> <?php echo $animal->getRacao()?> </td>
                         <td> <?php echo $animal->getPeso()?> </td>
-                        <td> <?php echo $animal->getDataNascimento()?> </td>
+                        <td> <?php echo $animal->getDataNascimentoBr()?> </td>
                         <td> <?php echo $animal->getSituacao()?> </td>
 
                         <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editarAnimal">Editar</button></td>  
@@ -231,8 +231,8 @@
                     </div>
 
                     <div class="col-sm-3">
-                        <label class="form-label" for="titulo">Data De Nascimento</label>
-                        <input required type="date" class="form-control" id="dataNascimento" name="dataNascimento" placeholder="" value= "<?php echo $animal->getDataNascimento()?>">
+                        <label class="form-label" for="titulo">Data de Nascimento</label>
+                        <input required type="text" class="form-control" id="dataNascimento2" name="dataNascimento" onfocus="formatarData()" value= "<?php echo $animal->getDataNascimentoBr()?>">
                     </div>
 
                     <div class="col-md-2">
