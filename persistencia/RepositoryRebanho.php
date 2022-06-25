@@ -84,6 +84,22 @@ class RepositoryRebanho extends Conexao{
         return $rebanho;
     }
 
+    public function getTotalAnimais($id){
+        $this->db = $this->conectaDB()->prepare("SELECT COUNT(*) FROM animal WHERE rebanho_id = ?");
+        $this->db->bindValue(1,$id);
+        $resultado = $this->db->execute();
+
+        $dados = $this->db->fetch(PDO::FETCH_NUM);
+
+        if($resultado){
+            $total = $dados[0];
+        }else{
+            $total = 0;
+        }
+
+        return $total;
+    }
+
     public function recuperaUsuario($usuario_id){
         $repositoryUsuario = new RepositoryUsuario();
         $usuario = $repositoryUsuario->getUsuario($usuario_id);
@@ -95,7 +111,7 @@ class RepositoryRebanho extends Conexao{
         $this->db->bindValue(1,$id);
         $resultado = $this->db->execute();
 
-        if($resultado ){
+        if($resultado){
             echo 
                 '<script>
                     window.location.replace("../apresentacao-web/rebanhos.php");
