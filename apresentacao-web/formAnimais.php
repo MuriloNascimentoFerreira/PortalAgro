@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!$_SESSION['logado']){
-        header('location:login.html');
+        header('location:login.php');
     }
     if(isset($_GET['id'])){
         $_SESSION['rebanho_id'] = $_GET['id'];
