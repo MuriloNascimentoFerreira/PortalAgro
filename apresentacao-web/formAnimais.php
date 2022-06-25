@@ -54,95 +54,98 @@
     ?>
     <a href="rebanhos.php" class="btn btn-secondary float-left">Voltar</a>
     <div class="container">
-        <h1 class="pb-1">Gerenciar Animais</h1>
- 
-        <form action="../logica/ControllerEditarRebanho.php?id=<?php echo $rebanho->getId();?>" class="row gy-2 gx-3 align-items-center" method="post">
-            <div class="col-sm-6">
-                <label class="form-label" for="titulo">Título</label>
-                <input required type="text" class="form-control" id="titulo" name="descricao" value="<?php echo $rebanho->getDescricao();?>">
-            </div>
-            <div class="col-md-3">
-                <label class="form-label" for="autoSinizingSelect">Tipo</label>
-                <select class="form-select" id="select" name="tipo">
-                    
-                <option selected value="<?php echo $rebanho->getTipoRebanhoEmNumero($rebanho->getTipo());?>"> <?php echo $rebanho->getTipo();?> </option>
-                    
-                    <?php if($rebanho->getTipo() != TipoRebanho::ASSININO):?>
-                        <option value="1"><?php echo TipoRebanho::ASSININO?></option>
-                    <?php endif ?>
-
-                    <?php if($rebanho->getTipo() != TipoRebanho::BOVINO):?>
-                        <option value="2"><?php echo TipoRebanho::BOVINO?></option>
-                    <?php endif ?>
-
-                    <?php if($rebanho->getTipo() != TipoRebanho::BUFALINO):?>
-                        <option value="3"><?php echo TipoRebanho::BUFALINO?></option>
-                    <?php endif ?>
-
-                    <?php if($rebanho->getTipo() != TipoRebanho::CAPRINO):?>
-                        <option value="4"><?php echo TipoRebanho::CAPRINO?></option>
-                    <?php endif ?>
-
-                    <?php if($rebanho->getTipo() != TipoRebanho::EQUINO):?>
-                        <option value="5"><?php echo TipoRebanho::EQUINO?></option>
-                    <?php endif ?>
-
-                    <?php if($rebanho->getTipo() != TipoRebanho::MUAR):?>
-                        <option value="6"><?php echo TipoRebanho::MUAR?></option>
-                    <?php endif ?>
-
-                    <?php if($rebanho->getTipo() != TipoRebanho::OVINO):?>
-                        <option value="7"><?php echo TipoRebanho::OVINO?></option>
-                    <?php endif ?>
-
-                    <?php if($rebanho->getTipo() != TipoRebanho::SUINO):?>
-                        <option value="8"><?php echo TipoRebanho::SUINO ?></option>
-                    <?php endif ?>
-
-                  </select>
-            </div>
-
-            <div class="col-auto align-self-end">
-                <button type="submit" class="btn btn-success px-4">Alterar</button>
-            </div>
-
-        </form>
-
-        <h2 class="text-start mt-4 pb-1">Adicionar animal ao rebanho</h2>
-
-        <form action="../logica/ControllerAnimal.php" class="row gy-2 gx-3 md-1 align-items-center" method="post">
-            <div class="col-sm-2">
-                <label class="form-label" for="racao">Ração(kg)</label>
-                <input required type="text" class="form-control" id="racao" name="racao" placeholder="">
-            </div>
-
-            <div class="col-sm-2">
-                <label class="form-label" for="peso">Peso(kg)</label>
-                <input required type="text" class="form-control" id="peso" name="peso" placeholder="">
-            </div>
-
-            <div class="col-sm-3">
-                <label class="form-label" for="titulo">Data de Nascimento</label>
-                <input required type="text" class="form-control" id="dataNascimento" name="dataNascimento" onfocus="formatarData()">
-            </div>
-            
-            <div class="col-md-2">
-                <label class="form-label" for="select">Situação</label>
-                <select class="form-select" id="select" name="situacao">
-                    <option selected value="1">Vivo</option>
-                    <option value="2">Abatido</option>
-                  </select>
-            </div>
-
-            <div class="col-auto align-self-end">
-                <button type="submit" class="btn btn-success px-4">Adicionar</button>
-            </div>
-
-        </form>
+        <h1 class="mt-5"><?php echo $rebanho->getDescricao();?></h1>
+    
+        <div class="card border-dark mb-3" style="max-width: 55em">
         
-        <h3 class="text-start mt-3 pb-2"><?php echo $rebanho->getDescricao();?></h3>
+            <div class="card-body text-dark">
+            
+                <div class="card-title"><h2 class="text-start">Editar Rebanho</h2></div>
 
-        <div class="container">
+                <form action="../logica/ControllerEditarRebanho.php?id=<?php echo $rebanho->getId();?>" class="row gy-2 gx-3 align-items-center" method="post">
+
+                    <div class="col-sm-6">
+                        <label class="form-label" for="titulo">Título</label>
+                        <input required type="text" class="form-control" id="titulo" name="descricao" value="<?php echo $rebanho->getDescricao();?>">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label" for="autoSinizingSelect">Tipo</label>
+                        <select class="form-select" id="select" name="tipo">
+                
+                        <option selected value="<?php echo $rebanho->getTipoRebanhoEmNumero($rebanho->getTipo());?>"> <?php echo $rebanho->getTipo();?> </option>
+                
+                            <?php if($rebanho->getTipo() != TipoRebanho::ASSININO):?>
+                                <option value="1"><?php echo TipoRebanho::ASSININO?></option>
+                            <?php endif ?>
+                            <?php if($rebanho->getTipo() != TipoRebanho::BOVINO):?>
+                                <option value="2"><?php echo TipoRebanho::BOVINO?></option>
+                            <?php endif ?>
+                            <?php if($rebanho->getTipo() != TipoRebanho::BUFALINO):?>
+                                <option value="3"><?php echo TipoRebanho::BUFALINO?></option>
+                            <?php endif ?>
+                            <?php if($rebanho->getTipo() != TipoRebanho::CAPRINO):?>
+                                <option value="4"><?php echo TipoRebanho::CAPRINO?></option>
+                            <?php endif ?>
+                            <?php if($rebanho->getTipo() != TipoRebanho::EQUINO):?>
+                                <option value="5"><?php echo TipoRebanho::EQUINO?></option>
+                            <?php endif ?>
+                            <?php if($rebanho->getTipo() != TipoRebanho::MUAR):?>
+                                <option value="6"><?php echo TipoRebanho::MUAR?></option>
+                            <?php endif ?>
+                            <?php if($rebanho->getTipo() != TipoRebanho::OVINO):?>
+                                <option value="7"><?php echo TipoRebanho::OVINO?></option>
+                            <?php endif ?>
+                            <?php if($rebanho->getTipo() != TipoRebanho::SUINO):?>
+                                <option value="8"><?php echo TipoRebanho::SUINO ?></option>
+                            <?php endif ?>
+                        </select>
+                    </div>
+                    <div class="col-auto align-self-end">
+                        <button type="submit" class="btn btn-success px-4">Alterar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card border-dark mb-3" style="max-width: 55em">
+            <div class="card-body text-dark">
+    
+                <h2 class="text-start mt-1 pb-1">Adicionar animal</h2>
+
+                <form action="../logica/ControllerAnimal.php" class="row gy-2 gx-3 md-1 align-items-center" method="post">
+                    <div class="col-sm-2">
+                        <label class="form-label" for="racao">Ração(kg)</label>
+                        <input required type="text" class="form-control" id="racao" name="racao" placeholder="">
+                    </div>
+
+                    <div class="col-sm-2">
+                        <label class="form-label" for="peso">Peso(kg)</label>
+                        <input required type="text" class="form-control" id="peso" name="peso" placeholder="">
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="form-label" for="titulo">Data de Nascimento</label>
+                        <input required type="text" class="form-control" id="dataNascimento" name="dataNascimento" onfocus="formatarData()">
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <label class="form-label" for="select">Situação</label>
+                        <select class="form-select" id="select" name="situacao">
+                            <option selected value="1">Vivo</option>
+                            <option value="2">Abatido</option>
+                        </select>
+                    </div>
+
+                    <div class="col-auto align-self-end">
+                        <button type="submit" class="btn btn-success px-4">Adicionar</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+        <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>

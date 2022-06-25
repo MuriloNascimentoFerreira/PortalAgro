@@ -67,7 +67,7 @@ include_once("../logica/enums.php");
              
         </form>
 
-        <div class="container">
+        <div class="table-responsive mt-3">
             <table class="table">
                 <thead>
                     <tr>
