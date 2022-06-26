@@ -54,16 +54,14 @@ Acesse: [Portal Agro](https://portal-agro.000webhostapp.com/)
 ### Para acessar
 ![acessar sistema](https://user-images.githubusercontent.com/49534874/175826971-b4f240df-0662-4eff-ac39-c59b7d2cb022.gif)
 
-### Gerenciar os Rebanhos
-
 <br>
 
+### Gerenciar os Rebanhos
 ![gerenciar-rebanhos](https://user-images.githubusercontent.com/49534874/175836723-85f73c9d-681c-4427-8293-01b8e7df2241.gif)
 
+<br>
 
 ### Gerenciar os Animais
-
-<br>
 
 ![gerenciar-animais](https://user-images.githubusercontent.com/49534874/175836728-9d942d13-5d38-40b9-997e-7ce14fa12cee.gif)
 
