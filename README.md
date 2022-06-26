@@ -2,14 +2,14 @@
 
 <h1 align="left">Portal Agro</h1>
 
-Acesse:[Portal Agro](https://portal-agro.000webhostapp.com/)
+Acesse: [Portal Agro](https://portal-agro.000webhostapp.com/)
 
 
 <h2 align="left">Ideia do projeto</h2>
 
 ###
 
-<p align="left">A ideia era construir um portal para informar os agropecuaristas da região do norte de minas. E junto ao portal, dar acesso a uma plataforma gratuita, para que eles pudessem fazer um gerenciamento mínimo do seus rebanhos.</p>
+<p align="left">A ideia era construir um portal para informar os agropecuaristas da região do norte de Minas. E junto ao portal, dar acesso a uma plataforma gratuita, para que eles pudessem fazer um gerenciamento mínimo do seus rebanhos. Podendo gerenciar vários rebanhos e gerenciar os animais que compuseram esses rebanhos. Alguns características como o peso, ração e data de nascimento do animal estão presentes no sistema</p>
 
 ###
 
@@ -46,4 +46,8 @@ Acesse:[Portal Agro](https://portal-agro.000webhostapp.com/)
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" width="52" alt="bootstrap logo"  />
 </div>
 
-###
+## O Portal
+![portal-gif](https://user-images.githubusercontent.com/49534874/175826952-55831626-3089-4fef-8678-9902e15f6bb8.gif)
+
+## O sistema de gerenciamento
+![acessar sistema](https://user-images.githubusercontent.com/49534874/175826971-b4f240df-0662-4eff-ac39-c59b7d2cb022.gif)
