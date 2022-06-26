@@ -104,7 +104,6 @@ INSERT INTO `usuario` (`id`, `nome`, `sobrenome`, `email`, `senha`) VALUES
 (5, '11', '11', '11@11', '$2y$10$DrEaiyTwOsM57rLiKo5AiuWolpHpeSGyPyLqphl8sPmZTMwO2V4m2'),
 (6, 'teste', 'teste', 'teste@teste', '$2y$10$gx0FyjYV3urx2bVtLgpQ6eQDQJFjv.L2xOMD0JuWt2dlE2QWyjZbq'),
 (7, 'admin', 'admin', 'admin@admin', '$2y$10$XQaDBh1RcWd0ExyKuKGklOcJ/74uyq.b8nVhXrhgAmBatrYE5GAgy'),
-(10, 'cad', 'cad', 'cad@cad', '$2y$10$lcZnz808Je5hFIHCUqq01.fW06vJYrMm66Ud/b7Vn/L3WU8XVytcG'),
 (11, 'murilo', 'n', 'm@m', '$2y$10$kIdBGtxc3aaIBhHLah6Ir.UYtlwo/J2Yx8/QGnzK17IvtS0S7y1Ta'),
 (12, 'gabriela', 'matos', 'gabriela@m', '$2y$10$xKHXRZ4I9LSs0Mzq/gqoZO0fltr6V8WQEarcxg/9rStxl/qDN8q1K');
 
