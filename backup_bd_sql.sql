@@ -74,16 +74,12 @@ CREATE TABLE `rebanho` (
 INSERT INTO `rebanho` (`id`, `descricao`, `tipo`, `usuario_id`) VALUES
 (14, 'Meus cavalos', 5, 7),
 (16, 'burros', 6, 10),
-(18, 'meu gado', 2, 11),
 (19, 'cavalos', 5, 12),
 (20, 'porcos caipira', 8, 12),
 (21, 'Meu gado', 2, 1),
 (22, 'Meu gado de leite', 2, 6),
-(23, 'nÃ£o sei', 1, 1),
-(24, 'Meu gado', 2, 10),
 (25, 'VACAS ', 2, 12),
-(30, 'BUFALOS', 3, 12),
-(33, 'a', 2, 5);
+(30, 'BUFALOS', 3, 12);
 
 -- --------------------------------------------------------
 
@@ -104,9 +100,6 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `sobrenome`, `email`, `senha`) VALUES
-(1, 'a1', 'a1', 'a@a', '$2y$10$Z4F37.ajRtz.UzNsKRxVHelbO3mxa9qo7J0/Utys28MwCRhe87Ak.'),
-(2, 'a1', 'a1', 'a@a', '$2y$10$FAXFEkU.l0uB/RDZu8cEZelNDs4YMUBpnUc6HvNNQAnJsp1CRN8DG'),
-(3, 'a1', 'a1', 'a@a', '$2y$10$njKYOF1kSu9Dyhx0JsBh8eMmw/aw55q4LJ7KEN/xPqJC2bIBjq48a'),
 (4, 'Murilo', 'nascimento', 'murilo@gmail.com', '$2y$10$Ky5zTy8Jdr40QSYVnTPksedAqXLYyTYCQPuMJmbbwlGGl3QkjvLk6'),
 (5, '11', '11', '11@11', '$2y$10$DrEaiyTwOsM57rLiKo5AiuWolpHpeSGyPyLqphl8sPmZTMwO2V4m2'),
 (6, 'teste', 'teste', 'teste@teste', '$2y$10$gx0FyjYV3urx2bVtLgpQ6eQDQJFjv.L2xOMD0JuWt2dlE2QWyjZbq'),
