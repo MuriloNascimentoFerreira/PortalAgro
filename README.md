@@ -1,8 +1,8 @@
 ###
 
 <h1 align="left">Portal Agro</h1>
+<p align="left"> Acesse: <a href="https://portal-agro.000webhostapp.com/" target="_blank" rel="external">Portal Agro</a></p>
 
-###
 
 <h2 align="left">Ideia do projeto</h2>
 
@@ -16,29 +16,25 @@
 
 ###
 
-<p align="left">* Aprimorar meus conhecimentos em HTML, CSS e Javascript.</p>
+<p align="left">  &#9679 Aprimorar meus conhecimentos em HTML, CSS e Javascript.</p>
 
 ###
 
-<p align="left">*Aprender usar o Bootstrap.</p>
+<p align="left">  &#9679 Aprender usar o Bootstrap.</p>
 
 ###
 
-<p align="left">*Aprender PHP.</p>
+<p align="left">  &#9679 Aprender PHP.</p>
 
 ###
 
-<p align="left">* No geral, desenvolver meus conhecimentos em desenvolvimento web.</p>
+<p align="left">  &#9679 No geral, desenvolver meus conhecimentos em desenvolvimento web.</p>
 
 ###
 
 <h2 align="left">Documentação</h2>
 
-###
-
-<div align="center">
-  <img src="https://drive.google.com/file/d/1ex5ZXyDxw2ZzXucRHDYH-MSqq-HdUue4/preview" width="640" height="480" allow="autoplay"></img>
-</div>
+![Diagrama_classe](https://user-images.githubusercontent.com/49534874/175822422-d972fa54-7b9e-4014-a4c4-810cbc715935.png)
 
 <div align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" width="52" alt="javascript logo"  />
