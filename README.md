@@ -37,7 +37,7 @@
 ###
 
 <div align="center">
-  <img src="https://drive.google.com/file/d/1ex5ZXyDxw2ZzXucRHDYH-MSqq-HdUue4/view?usp=sharing"  />
+  <img src="[https://drive.google.com/file/d/1ex5ZXyDxw2ZzXucRHDYH-MSqq-HdUue4/view?usp=sharing](https://drive.google.com/file/d/1ex5ZXyDxw2ZzXucRHDYH-MSqq-HdUue4/preview)" height="491" width="1042" alt="Diagrama de classe" />
 </div>
 
 <div align="left">
